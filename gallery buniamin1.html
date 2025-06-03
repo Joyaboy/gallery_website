@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Galeri</title>
+  <img src="gambar0.jpg" width="1300" height="500  " />
+  <style>
+    
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 1.2em;
+      color: #666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox:active {
+      display: none;
+    }
+    /* Bentuk dasar video */
+.gallery video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;           
+  border-radius: 15px;         
+  background: #000;            
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
+}
+
+/* Styling untuk video controls */
+.gallery video::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.8);        
+  border-radius: 0 0 15px 15px;          
+}
+/* Animasi hover untuk video */
+.gallery video {
+  cursor: pointer;
+  transition: all 0.3s ease;             
+}
+
+.gallery video:hover {
+  transform: translateY(-8px) scale(1.03); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25); 
+}
+
+
+.gallery video:not([src]) {
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.action-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #4a6bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 107, 255, 0.3);
+}
+.action-button:hover {
+  background-color: #3a5bef;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(74, 107, 255, 0.4);
+}
+
+.action-button:active {
+  transform: translateY(1px);
+}
+.action-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.action-button:hover::after {
+  transform: translateX(100%);
+}
+/* Animation for LAINNYA text */
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px rgba(74, 107, 255, 0.5); }
+  50% { text-shadow: 0 0 20px rgba(74, 107, 255, 0.9); }
+  100% { text-shadow: 0 0 5px rgba(74, 107, 255, 0.5); }
+}
+
+.animated-header {
+  animation: textGlow 3s infinite;
+  color: #0a1991;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Selamat Datang</h1>
+    <p>GALLERY BUNIAMIN FAMILY.</p>
+
+  </header> 
+
+  <section class="gallery">
+    <!-- Replace src with actual image URLs -->
+    <img src="Gambar1.jpg" alt="Foto 1">
+    <img src="gambar2.jpg" alt="Foto 2">
+    <img src="gambar3.jpg" alt="Foto 3">
+    <img src="gambar4.jpg" alt="Foto 4">
+    <img src="gambar5.jpg" alt="Foto 5">
+    <img src="gambar6.jpg" alt="Foto 6">
+    <img src="gambar7.jpg" alt="Foto 7">
+    <img src="gambar8.jpg" alt="Foto 8">
+    <img src="gambar9.jpg" alt="Foto 9">
+    <img src="gambar10.jpg" alt="Foto 10">
+    <img src="gambar11.jpg" alt="Foto 11">
+    <img src="gambar12.jpg" alt="Foto 12">
+   
+  <video controls width="450" height="350">
+    <source src="video2.mp4" type="video/webm" />
+  </video>  
+  <video controls width="450" height="350">
+    <source src="video1.mp4"type="video/webm" />
+  </video>
+  <video controls width="450" height="350">
+    <source src="video1.mp4" type="video/webm" />
+  </video>
+  <video controls width="450" height="350">
+    <source src="video2.mp4" type="video/webm" />
+  </video>
+  </section>
+    <hr size="5px" width="1300" color="black">
+    <img src="gambar0.jpg" width="1300" height="500  " />
+    <header>
+      <h1 class="animated-header">LAINNYA</h1>
+      <a href="gallery buniamin2.html" class="action-button">Klik Disini</a>
+    </header>
+   
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
